@@ -24,9 +24,8 @@
 
 function eZSiteINISettings( $parameters )
 {
-    $installer = new ezdemoInstaller( $parameters );
+    $installer = new MugoDemoInstaller( $parameters );
 
     return $installer->siteINISettings();
 }
 
-?>

@@ -1,1 +1,5 @@
-zip -r -b src mugo_lovestack_demo.ezpkg *
+rm mugo_lovestack_demo.ezpkg;
+cd src
+tar cvzf ../mugo_lovestack_demo.ezpkg *
+cd ..
+

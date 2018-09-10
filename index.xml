@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<packages vendor="eZ systems">
+    <package
+        name="lovestack_demo"
+        version="1.0.0"
+        type="site"
+        summary="Lovestack Demo Site"
+        description="Lovestack Demo Site is a web based CMS solution based on eZ Publish. It contains templates and settings that meets the most common requirements for content management systems."
+        url="https://storage.googleapis.com/lovestack/mugo_lovestack_demo.ezpkg"
+        thumbnail_url="https://storage.googleapis.com/lovestack/mugo.svg"
+    />
+</packages>

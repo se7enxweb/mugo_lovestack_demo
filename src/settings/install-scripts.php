@@ -27,7 +27,7 @@ This get called by ezstep_create_sites.php
 */
 function eZSitePreInstall( )
 {
-    $installer = new ezdemoInstaller( array( 'var_dir' => 'var/ezdemo_site' ) );
+    $installer = new MugoDemoInstaller( array( 'var_dir' => 'var/ezdemo_site' ) );
 
     $installer->preInstall();
 }
@@ -38,9 +38,7 @@ This get called by ezstep_create_sites.php
 */
 function eZSitePostInstall( &$parameters )
 {
-    $installer = new ezdemoInstaller( $parameters );
+    $installer = new MugoDemoInstaller( $parameters );
 
     $installer->postInstall();
 }
-
-?>
