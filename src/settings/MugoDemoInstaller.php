@@ -2234,7 +2234,16 @@ class MugoDemoInstaller extends eZSiteInstaller
         $settings['Session'] = array( 
             'SessionNamePerSiteAccess' => 'disabled' 
         );
-        return array( 
+        $settings['HTTPHeaderSettings'] = array(
+            'CustomHeader' => 'enabled',
+            'OnlyForContent' => 'disabled',
+            'Cache-Control' => array(
+                '/' => 'public'
+            ),
+        );
+# Legacy responses are getting Cache-Control:private by default.
+# Force them to be public so Varnish / reverse proxies can cache
+        return array(
             'name' => 'site.ini', 
             'settings' => $settings 
         );
