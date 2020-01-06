@@ -119,7 +119,7 @@ class MugoDemoInstaller extends eZSiteInstaller
             'translation' => $this->createSiteaccessUrls( array( 
                 'siteaccess_list' => $this->setting( 'language_based_siteaccess_list' ), 
                 'access_type' => $this->setting( 'access_type' ), 
-                'access_type_value' => $this->setting( 'access_type_value' ) + 1,  // 'access_type_value' is for 'ezwein_site_user', so take next port number.
+                'access_type_value' => int_val( $this->setting( 'access_type_value' ) ) + 1,  // 'access_type_value' is for 'ezwein_site_user', so take next port number.
                 'host' => $this->setting( 'host' ), 
                 'exclude_port_list' => array( 
                     $this->setting( 'admin_access_type_value' ), 
@@ -2234,6 +2234,8 @@ class MugoDemoInstaller extends eZSiteInstaller
         $settings['Session'] = array( 
             'SessionNamePerSiteAccess' => 'disabled' 
         );
+        # Legacy responses are getting Cache-Control:private by default.
+        # Force them to be public so Varnish / reverse proxies can cache
         $settings['HTTPHeaderSettings'] = array(
             'CustomHeader' => 'enabled',
             'OnlyForContent' => 'disabled',
@@ -2241,8 +2243,6 @@ class MugoDemoInstaller extends eZSiteInstaller
                 '/' => 'public'
             ),
         );
-# Legacy responses are getting Cache-Control:private by default.
-# Force them to be public so Varnish / reverse proxies can cache
         return array(
             'name' => 'site.ini', 
             'settings' => $settings 
