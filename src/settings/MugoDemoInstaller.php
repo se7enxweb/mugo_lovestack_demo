@@ -1663,14 +1663,6 @@ class MugoDemoInstaller extends eZSiteInstaller
                         'class_identifier' => 'flash' 
                     ) 
                 ), 
-                'folder' => array( 
-                    'Source' => 'node/view/admin_preview.tpl', 
-                    'MatchFile' => 'admin_preview/folder.tpl', 
-                    'Subdir' => 'templates', 
-                    'Match' => array( 
-                        'class_identifier' => 'folder' 
-                    ) 
-                ), 
                 'gallery' => array(
                     'Source' => 'node/view/admin_preview.tpl', 
                     'MatchFile' => 'admin_preview/gallery.tpl', 
